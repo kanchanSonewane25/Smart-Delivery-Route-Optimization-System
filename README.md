@@ -34,7 +34,7 @@ Time Complexity: O(VE), where V is the number of locations and E is the number o
 
 Purpose: Solves the "Plan Round-Trip" problem. It finds the shortest possible route that visits every single destination exactly once and returns to the starting point (the Warehouse).
 
-Time Complexity: O(N!), where N is the number of destinations to visit. This is a brute-force solution that checks every single possible permutation of routes. It is not efficient and becomes unusable (will freeze the app) with more than ~10 destinations.
+Time Complexity: O(N!).
 
 Project File Structure
 
@@ -43,20 +43,3 @@ main_delivery.py: The main file. Runs the Tkinter application, creates the GUI, 
 graph_data.py: Contains the raw data for the graph, including node coordinates for drawing and the list of edges with their costs. You can edit this file to change the map!
 
 algorithms.py: Contains the clean, separated Python implementations for Kruskal's, Bellman-Ford's, and the brute-force TSP.
-
-README.md: This file.
-
-How to Run
-
-Make sure you have Python 3 installed.
-
-Save all four files (main_delivery.py, graph_data.py, algorithms.py, README.md) in the same directory.
-
-Open a terminal or command prompt and navigate to that directory.
-
-Run the main file:
-
-python main_delivery.py
-
-
-The GUI window will open. Use the buttons on the left to run each algorithm and see the visualization and output.
