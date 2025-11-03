@@ -1,45 +1,25 @@
-DAA Project: Smart Delivery Route Optimization System
+# DAA: Delivery Route Optimization
 
-This project is a Python application that demonstrates three core graph algorithms used in logistics and network optimization. It provides a graphical user interface (GUI) built with Tkinter to visualize the results of each algorithm on a predefined delivery network.
+A command-line Python application demonstrating core graph algorithms for logistics optimization.
 
-Problem Definition
+## Problem Definition
 
-A delivery company wants to optimize its operations in three ways:
+1.  Build Network: Find the cheapest way to connect all delivery hubs.
+2.  Shortest Paths: Find the shortest delivery routes from the warehouse to all other locations.
+3.  Round-Trip: Find the most efficient route to visit all destinations and return to the warehouse.
 
-Build Lowest-Cost Network: Determine the cheapest way to build a road network that connects all its delivery hubs and client locations.
+---
 
-Find Shortest Paths: Compute the shortest delivery routes from the central warehouse to all other destinations, considering potential costs.
+## Algorithms
 
-Plan Round-Trip: Find the most efficient round-trip route for a delivery truck that must visit all destinations and return to the warehouse.
+* **Kruskal’s Algorithm (Minimum Spanning Tree)**
+    * Solves the "Build Network" problem.
+    * Time Complexity: $O(E \log V)$
 
-Algorithms Used & Time Complexity
+* **Bellman-Ford Algorithm (Shortest Path)**
+    * Solves the "Shortest Paths" problem, handling negative weights.
+    * Time Complexity: $O(VE)$
 
-This project implements and visualizes the following three algorithms:
-
-1. Kruskal’s Algorithm (Minimum Spanning Tree)
-
-Purpose: Solves the "Build Lowest-Cost Network" problem. It finds the Minimum Spanning Tree (MST) of the graph, which is the set of edges (roads) that connects all nodes (locations) with the minimum possible total cost (construction cost).
-
-Time Complexity: O(E log V), where E is the number of potential roads and V is the number of locations. This is highly efficient.
-
-2. Bellman-Ford Algorithm (Shortest Path)
-
-Purpose: Solves the "Find Shortest Paths" problem. It finds the shortest path from a single source (the Warehouse) to all other nodes in the graph.
-
-Why Bellman-Ford? Unlike Dijkstra's algorithm, Bellman-Ford can handle edges with negative weights (which could represent a "subsidy" or "rebate" on a route). It can also detect negative-weight cycles (an impossible situation where a route gets infinitely cheaper).
-
-Time Complexity: O(VE), where V is the number of locations and E is the number of roads.
-
-3. Travelling Salesman Problem (TSP) - Brute-Force
-
-Purpose: Solves the "Plan Round-Trip" problem. It finds the shortest possible route that visits every single destination exactly once and returns to the starting point (the Warehouse).
-
-Time Complexity: O(N!).
-
-Project File Structure
-
-main_delivery.py: The main file. Runs the Tkinter application, creates the GUI, and handles button clicks to trigger the algorithms.
-
-graph_data.py: Contains the raw data for the graph, including node coordinates for drawing and the list of edges with their costs. You can edit this file to change the map!
-
-algorithms.py: Contains the clean, separated Python implementations for Kruskal's, Bellman-Ford's, and the brute-force TSP.
+* **Travelling Salesman Problem (TSP) - Brute-Force**
+    * Solves the "Round-Trip" problem.
+    * Time Complexity: O(N!)
